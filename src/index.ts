@@ -1,16 +1,6 @@
 import type { Router } from 'express';
 
 const commonCSS = `
-  .text-left {
-    text-align: left;
-  }
-
-  a[href] {
-    color: #0c4a6e;
-  }
-`;
-
-const articleCSS = `
   .mce-content-body {
     --table-border-color: #ccc;
     --extension-ring-color: rgba(200,90,90,.7);
@@ -19,7 +9,6 @@ const articleCSS = `
 
   h2, h3, h4 {
     font-weight: normal;
-    margin-inline: auto;
   }
 
   h2 {
@@ -30,8 +19,22 @@ const articleCSS = `
   p {
     font-size: 1rem;
     line-height: 1.5rem;
-
     padding-block: 0.25rem;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  a[href] {
+    color: #0c4a6e;
+  }
+
+`;
+
+const articleCSS = `
+  h2, h3, h4 {
+    margin-inline: auto;
   }
 
   /* TinyMCE 自動加的暫時性 iframe 預覽容器 */
@@ -128,7 +131,7 @@ export default {
   handler: (router: Router) => {
     router.get('/article.css', (_req, res) => {
       res.setHeader('Content-Type', 'text/css');
-      return res.send(articleCSS + commonCSS);
+      return res.send(commonCSS + articleCSS);
     });
   }
 };

@@ -1,6 +1,6 @@
 {
-	"name": "directus-extension-endpoint-tinymce",
-	"description": "Please enter a description for your extension",
+	"name": "directus-extension-tinymce-endpoint-example",
+	"description": "Provide endpoints to be used by TinyMCE interface",
 	"icon": "extension",
 	"version": "1.0.0",
 	"keywords": [
